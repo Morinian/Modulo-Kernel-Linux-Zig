@@ -1,4 +1,4 @@
 # Equipe legal :D
 - Paula Martins
-- Eric Donato
+- Eric Donato (o mais legal)
 - Matheus Batista
