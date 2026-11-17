@@ -1,0 +1,6 @@
+obj-m += zigcalc.o
+zigcalc-y := zigcalc_glue.o zigcalc_core.o
+
+$(obj)/zigcalc_core.o: $(src)/zigcalc.zig
+	zig build-obj $< -target x86_64-freestanding-none -mcpu=x86_64-mmx-sse-sse2-avx-avx2 -mcmodel=kernel -fno-stack-check -fno-unwind-tables -fsingle-threaded -O ReleaseSmall -femit-bin=$@
+	@echo "cmd_$@ := zig build-obj" > $(dir $@).$(notdir $@).cmd
